@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { fetchGetAllProducts } from '@/services/products'
+import { getAllProducts } from '@/services/products'
 
 export const AppContext = createContext(null)
 
@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
 
   // Ефект, що завантажує список продуктів при завантаженні сторінк =================================================
   useEffect(() => {
-    fetchGetAllProducts().then(data => setProductsList(data))
+    getAllProducts().then(data => setProductsList(data))
   }, [])
 
   // Ефект, що завантажує список обраних продуктів з localStorage при завантаженні сторінки =========================

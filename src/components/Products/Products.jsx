@@ -1,15 +1,23 @@
-import { useContext } from 'react'
+import { useEffect } from 'react'
 
 import './ProductList.scss'
 import Loading from '@/ui/Loading/Loading.jsx'
 import Button from '@/ui/Button/Button.jsx'
-import { AppContext } from '@/context/AppContext'
+
 import ProductList from './ProductList.jsx'
+import {useDispatch, useSelector} from "react-redux";
+import {fetchGetAllProducts} from "@/store/slices/productsSlice.js";
 
 const Products = () => {
-  const { productsList } = useContext(AppContext)
+    const { products, loading } = useSelector(state => state.products)
+    const dispatch = useDispatch()
+    console.log(products)
 
-  if (!productsList || productsList.length === 0) {
+    useEffect(() => {
+       dispatch(fetchGetAllProducts())
+    }, [dispatch]);
+
+  if (loading) {
     return <Loading />
   }
 
@@ -17,12 +25,12 @@ const Products = () => {
     <section className='products'>
       <header className='products__header'>
         <h1>Продукти</h1>
-        <h2>Кількість: {productsList.length}</h2>
+        <h2>Кількість: {products.length}</h2>
       </header>
 
-      <ProductList products={productsList} />
+      <ProductList products={products} />
 
-      <Button className='btn-see-more' disabled={productsList.length}>
+      <Button className='btn-see-more' disabled={products.length}>
         Дивитись інші товари
       </Button>
     </section>

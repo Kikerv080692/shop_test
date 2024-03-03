@@ -1,4 +1,4 @@
-export const fetchGetAllProducts = async () => {
+export const getAllProducts = async () => {
   try {
     const response = await fetch('/products.json')
 
