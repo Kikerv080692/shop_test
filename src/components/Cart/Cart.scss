@@ -88,7 +88,7 @@
   // PAYMENT
   .payment {
     align-self: flex-start;
-    max-height: 350px;
+    max-height: 100%;
     height: 100%;
     padding: 20px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -96,6 +96,28 @@
 
     &__title {
       text-align: center;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &-btn {
+        border-radius: 4px;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        background: green;
+        color: white;
+        font-size: 20px;
+      }
+    }
+    &__form input {
+      border-radius: 3px;
+      height: 25px;
+    }
+
+    .error-message {
+      color: red;
     }
   }
 }

@@ -3,6 +3,8 @@ export const PAGES_SLUGS = {
 
   cart: '/cart',
 
+  payment: '/payment',
+
   favorites: '/favorites',
 
   notFound: '*'
