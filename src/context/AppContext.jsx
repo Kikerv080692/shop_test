@@ -7,6 +7,7 @@ export const AppProvider = ({ children }) => {
   const [productsList, setProductsList] = useState([])
   const [favoritesList, setFavoritesList] = useState([])
   const [cartList, setCartList] = useState([])
+  const [toggleProducts, setToggleProducts] = useState(false)
 
   // Ефект, що завантажує список продуктів при завантаженні сторінк =================================================
   useEffect(() => {
@@ -106,7 +107,7 @@ export const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider value={{
-      productsList, favoritesList, toggleFavorite, removeFromFavorites, removeAllFavorites, cartList, addToCart, removeFromCart, removeAllFromCart
+      productsList, favoritesList, toggleProducts, setToggleProducts, toggleFavorite, removeFromFavorites, removeAllFavorites, cartList, addToCart, removeFromCart, removeAllFromCart
     }}
     >
       {children}
