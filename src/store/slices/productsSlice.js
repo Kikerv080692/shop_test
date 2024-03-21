@@ -1,6 +1,6 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import {getAllProducts} from "@/services/products.js";
+import {getAllProducts} from "../../services/products.js";
 
 
 // Опис асинхронної функції для отримання даних

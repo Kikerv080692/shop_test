@@ -10,7 +10,7 @@ const ProductList = ({ products }) => {
   return (
       <>
         <div>
-          <Button handlerClick={() => setToggleProducts(prev => !prev)}>Toggle</Button>
+          <Button className="toggle__btn" handlerClick={() => setToggleProducts(prev => !prev)}>Toggle</Button>
           {/*<Button handlerClick={() => setToggleProducts(false)}>Row</Button>*/}
           {/*<Button handlerClick={() => setToggleProducts(true)}>Table</Button>*/}
         </div>
